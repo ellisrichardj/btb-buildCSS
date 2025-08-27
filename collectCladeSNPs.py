@@ -41,7 +41,7 @@ def extractSNPs(pathtoSNPtables):
     cladeSNP_df.to_csv('{}_cladeSNPs.csv'.format(clade))
 
     # output SNPs which are represented by more than 99% of samples in a clade
-    # change to 0.95 (95%) for B6-11 and Microti
+    # change to 0.95 (95%) for B6-11, B6-53 and Microti
     signifSNP_df = allSNP_df[allSNP_df['Majority'] >= 0.99]
     signifSNP_df.fillna(signifSNP_df.mode(axis=1))
     signifSNP_df.columns.values[0] = clade
